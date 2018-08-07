@@ -4,7 +4,8 @@ import React from 'react'
 const input = (props) => {
     return (
         <div>
-            <input type="text" onChange={props.whenValueIsChanged}/>
+            {/* added value property to display two-way binding in the Input field for us to be able to display the starting username or the default one der before */}
+            <input type="text" onChange={props.whenValueIsChanged} title={props.name} value={props.name}/>
         </div>
     )
 }

@@ -64,7 +64,7 @@ class App extends Component {
         <Output username={this.state.username[2].the_username}/>
         <Output username={this.state.username[3].the_username}/>
 
-        <Input whenValueIsChanged={this.eventHandler}/>
+        <Input whenValueIsChanged={this.eventHandler} name={this.state.username[0].the_username}/>
       </div>
     );
   }
