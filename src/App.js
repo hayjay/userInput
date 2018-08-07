@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Output from './UserOutput';
+import Input from './UserInput';
 
 class App extends Component {
   state = {
@@ -20,11 +21,33 @@ class App extends Component {
       },
       {
         the_username : 'Adelaja' 
-      },
+      }
     ]
   }
 
   //adding a method to manipulate the state
+  eventHandler = (event) => {
+    this.setState({
+      username : [
+        {
+          the_username : event.target.value
+        },
+        {
+          the_username : 'lekan' 
+        },
+        {
+          the_username : 'lokoso' 
+        },
+        {
+          the_username : 'samsondeen' 
+        },
+        {
+          the_username : 'wahab' 
+        }
+      ]
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -40,6 +63,8 @@ class App extends Component {
         <Output username={this.state.username[1].the_username}/>
         <Output username={this.state.username[2].the_username}/>
         <Output username={this.state.username[3].the_username}/>
+
+        <Input whenValueIsChanged={this.eventHandler}/>
       </div>
     );
   }

@@ -4,7 +4,9 @@ import React from 'react'
 const input = (props) => {
     return (
         <div>
-            <input type="text" value=""/>
+            <input type="text" onChange={props.whenValueIsChanged}/>
         </div>
     )
 }
+
+export default input
